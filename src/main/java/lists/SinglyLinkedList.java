@@ -130,10 +130,6 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
         return first.getData();
     }
 
-    public boolean isEmpty() {
-        return head.getNext() == null;
-    }
-
     public void push(String value) {
         appendFront(value);
     }

@@ -1,6 +1,25 @@
+======== Q1 single array to represent three stacks (CCI 5th 3.1)
+
+Divide array in three parts;
+calculate pointers
+int[] stackPointer = {-I, -1, -I};
+
+us a regular stack
+
+======== Q2
+
+======== Q3
+
+How would you design a stack which, in addition to push and pop, also has a
+function min which returns the minimum element? Push, pop and min should all
+operate in 0(1) time
+
+- putting additional var with min breaks constant time of pop - stack needs to be traversed
+
 
 
 Stacks in Java
+
 
 Good stack explaination & assignments:
 http://introcs.cs.princeton.edu/java/43stack/
