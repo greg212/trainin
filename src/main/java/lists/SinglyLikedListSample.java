@@ -6,7 +6,8 @@ package lists;
  */
 public class SinglyLikedListSample  {
 
-
+//merge two storted linked lists
+    //inserton sort for lists (COding inerviews Q14)
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
 
@@ -16,6 +17,8 @@ public class SinglyLikedListSample  {
         list.appendTail("item3");
         list.appendFront("itemFront2");
         list.appendTail("item4");
+
+        list.print_reverse();
 
         list.delete("item3");
         list.delete("itemFront2");

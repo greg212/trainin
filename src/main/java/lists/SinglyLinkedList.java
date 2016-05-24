@@ -20,6 +20,32 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
        return tail;
     }
 
+    public static SinglyLinkedList merge(SinglyLinkedList l1, SinglyLinkedList l2) {
+        SinglyLinkedList newList = new SinglyLinkedList();
+        Node newNodes = newList.getHead();
+
+        Node nodes1 = l1.getHead();
+
+//        while(nodes1.getNext()!=null) {
+//            newNodes.set
+//        }
+        return newList;
+    }
+
+    //TODO implement kth node from the end
+
+    public void print_reverse() {
+        print(head.getNext());
+
+    }
+
+    public void print(Node currNode) {
+        if(currNode != null) {
+            print(currNode.getNext());
+            System.out.println(currNode.getData());
+        }
+    }
+
     //TODO implmenent
     public void insertAfter(String search, String newData) {
         Node current = head.getNext();
@@ -72,6 +98,7 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
         }
     }
 
+
     public void appendTail(String data) {
         Node newNode = new Node(data);
 
@@ -111,6 +138,10 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
         appendFront(value);
     }
 
+    public boolean isEmpty() {
+        return getHead().getNext() == null;
+    }
+
     @Override
     public Iterator<Node> iterator() {
 
@@ -133,6 +164,10 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
 
         return it;
 
+    }
+
+    public Node getHead() {
+        return head;
     }
 
     public class Node {
