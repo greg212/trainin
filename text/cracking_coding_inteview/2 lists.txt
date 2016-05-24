@@ -1,0 +1,5 @@
+
+Removing duplicated 
+
+- with buffer - do a hashmap
+- without - iterate for each element
