@@ -92,7 +92,7 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
     }
 
     public String pop() {
-        if(head.getNext() ==null) {
+        if(isEmpty()) {
             throw new NoSuchElementException();
         }
 
@@ -101,6 +101,10 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
         head.setNext(first.getNext());
 
         return first.getData();
+    }
+
+    public boolean isEmpty() {
+        return head.getNext() == null;
     }
 
     public void push(String value) {
