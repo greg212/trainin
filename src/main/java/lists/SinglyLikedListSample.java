@@ -44,5 +44,6 @@ public class SinglyLikedListSample  {
             pos++;
         }
 
+        System.out.println("Middle: " + list.findMiddle());
     }
 }

@@ -42,3 +42,19 @@ If the fast pointer moves onto or over the slow pointer
 Return that there is a cycle
 Advance the slow pointer one node
 Advance the fast pointer two nodes
+
+ASSIGNMENT 4)
+
+IF the linked list is palindrome
+
+
+ 1   Find middle element of linked list using slow and fast pointer method .
+ 2   Reverse second part of linked list
+ 3   Compare first and second part of linked list if it matches then linked list is palindrome.
+
+http://www.java2blog.com/2016/04/how-to-check-if-linked-list-is.html
+
+ASSIGNMENT 5)
+http://www.java2blog.com/2016/02/find-start-node-of-loop-in-linkedlist.html
+
+

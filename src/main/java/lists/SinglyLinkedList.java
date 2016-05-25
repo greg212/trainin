@@ -16,6 +16,18 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
     //implement
     private Node tail = head;
 
+    public String findMiddle() {
+        Node slow = head.getNext();
+        Node fast = head.getNext();
+
+        while(fast.getNext() != null) {
+            fast = fast.getNext();
+            slow = slow.getNext();
+        }
+
+        return slow.getData();
+    }
+
     Node getTail() {
        return tail;
     }
