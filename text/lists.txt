@@ -42,3 +42,10 @@ If the fast pointer moves onto or over the slow pointer
 Return that there is a cycle
 Advance the slow pointer one node
 Advance the fast pointer two nodes
+
+ASSIGNMENT 4)
+
+http://www.geeksforgeeks.org/remove-duplicates-from-an-unsorted-linked-list/
+Remove duplicates from unsorted list
+
+http://www.chiark.greenend.org.uk/~sgtatham/algorithms/listsort.html
