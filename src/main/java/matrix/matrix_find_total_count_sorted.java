@@ -5,6 +5,9 @@ package matrix;
  */
 public class matrix_find_total_count_sorted {
 
+    /*
+    It is a modified binary search
+     */
     static int bsearch(int row[], final int seekForValue) {
         int low = 0;
         int high = row.length -1;

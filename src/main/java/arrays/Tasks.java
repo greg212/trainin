@@ -1,7 +1,8 @@
 package arrays;
 
 /**
- * Created by gs on 2016-05-23.
+ *
+ * Merge an array of size n into another array of size m+n
  */
 public class Tasks {
 
@@ -27,4 +28,7 @@ public class Tasks {
 //    a b c d
 //
 //    d c b a
+
+
+
 }

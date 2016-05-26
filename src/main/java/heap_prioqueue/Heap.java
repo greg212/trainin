@@ -10,6 +10,7 @@ public class Heap {
         last = 1;
     }
 
+    //can work in place - just pop item as last item in array after heapify
     void sort() {
         while(last>1) {
             print();
