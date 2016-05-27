@@ -1,14 +1,14 @@
 .length
 
 int[] b = Arrays.copyOf(a, a.length); //array coping
-                                      
+
 Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.
 
 
 
 assignment 1)
 
-Write an efficient program for printing k largest elements in an array. 
+Write an efficient program for printing k largest elements in an array.
 Elements in array can be in any order.
 
 http://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
@@ -74,7 +74,7 @@ void leftRotatebyOne(int arr[], int n)
      arr[i] = arr[i+1];
   arr[i] = temp;
 }
- 
+
 /*Function to left rotate arr[] of size n by d*/
 void leftRotate(int arr[], int d, int n)
 {
@@ -82,16 +82,48 @@ void leftRotate(int arr[], int d, int n)
   for (i = 0; i < d; i++)
     leftRotatebyOne(arr, n);
 }
- 
+
 
 
  array todo
- 
- http://www.geeksforgeeks.org/maximum-sum-path-across-two-arrays/          
- 
- 
+
+ http://www.geeksforgeeks.org/maximum-sum-path-across-two-arrays/
+
+
  https://www.careercup.com/question?id=5638261762424832
 
 
  TODO implement circular buffer
+
+ASSIGNMENT 3
+http://www.geeksforgeeks.org/count-all-distinct-pairs-formed-by-contiguous-sub-array/
+
+Count distinct pairs in arrays of numbers (contiguous)
+- sliding window
+- number of pairs window size – 1
+- expand window right
+- if duplicate is found shrink window left until there are no duplicates
+- store visited position in boolean vector
+
+Input:  [1, 4, 2, 4, 3, 2]
+Output: 8
+The subarrays with distinct elements
+are [1, 4, 2], [2, 4, 3] and [4, 3, 2].
+There are 8 pairs that can be formed
+from above array.
+(1, 4), (1, 2), (4, 2), (2, 4), (2, 3),
+(4, 3), (4, 2), (3, 2)
+
+
+ASSIGNMENT 4
+http://www.geeksforgeeks.org/absolute-distinct-count-array-sorted-absolute-values/
+
+
+ASSIGNEMNT 5
+http://www.geeksforgeeks.org/rearrange-array-in-alternating-positive-negative-items-with-o1-extra-space-set-2/
+
+ASSIGNMENT 6
+Merge k sorted arrays
+
+- Use min heap
 

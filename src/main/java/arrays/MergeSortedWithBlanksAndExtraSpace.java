@@ -2,7 +2,7 @@ package arrays;
 
 /**
  *
- * Merge an array of size n into another array of size m+n
+ * MergeWithMergeSort an array of size n into another array of size m+n
  *
  * http://www.geeksforgeeks.org/merge-one-array-of-size-n-into-another-one-of-size-mn/
  *

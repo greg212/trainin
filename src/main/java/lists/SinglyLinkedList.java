@@ -47,14 +47,23 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
     //TODO implement kth node from the end
 
     public void print_reverse() {
-        print(head.getNext());
+        print_back(head.getNext());
 
     }
 
-    public void print(Node currNode) {
+    public void print_back(Node currNode) {
         if(currNode != null) {
             print(currNode.getNext());
             System.out.println(currNode.getData());
+        }
+    }
+
+
+    public void print(Node currNode) {
+        if(currNode != null) {
+            System.out.println(currNode.getData());
+            print(currNode.getNext());
+
         }
     }
 
@@ -127,6 +136,16 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
         head.setNext(newNode);
         if(newNode.getNext() == null) {
             tail = newNode;
+        }
+    }
+
+    public void appendFront(Node newNode) {
+        if (newNode != null) {
+            newNode.setNext(head.getNext());
+            head.setNext(newNode);
+            if (newNode.getNext() == null) {
+                tail = newNode;
+            }
         }
     }
 
@@ -207,4 +226,38 @@ public class SinglyLinkedList implements Iterable<SinglyLinkedList.Node>, Stack 
             this.next = next;
         }
     }
+
+    //my implementation .. O(n) ?
+    void rotate(int i) {
+        int times = i % getLength();
+        while(i>0) {
+            rotateOne();
+            i--;
+        }
+    }
+
+    private int getLength() {
+        int count = 0;
+        Node current = head;
+        while(current.getNext()!=null) {
+            count++;
+            current = current.getNext();
+        }
+        return count;
+    }
+
+    private void rotateOne() {
+        Node curr = head.getNext();
+        Node prev = null;
+        while(curr.getNext() != null) {
+            prev = curr;
+            curr = curr.getNext();
+        }
+        //make last
+        if(prev != null) {
+            prev.setNext(null);
+        }
+        appendFront(curr);
+    }
+
 }

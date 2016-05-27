@@ -7,7 +7,7 @@ package arrays;
  */
 public class MergeSortedContantSpace {
 
-    // Merge ar1[] and ar2[] with O(1) extra space
+    // MergeWithMergeSort ar1[] and ar2[] with O(1) extra space
     void merge(int ar1[], int ar2[] )
     {
         // Iterate through all elements of ar2[] starting from

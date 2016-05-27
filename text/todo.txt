@@ -1,4 +1,4 @@
-1. skonczyæ linked list.
+1. skonczyï¿½ linked list.
 2. zrobic double linked list + operacje
 3. zrobic stos 
 
@@ -6,3 +6,5 @@
 
 
 http://www.geeksforgeeks.org/amazon-interview-set-8-2/
+
+
