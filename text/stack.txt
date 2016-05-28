@@ -16,7 +16,7 @@ operate in 0(1) time
 
 - putting additional var with min breaks constant time of pop - stack needs to be traversed
 
-
+- use additional stack where min value is pushed; if value is popped and
 
 
 ====== Q4 (CCI 3.6)
