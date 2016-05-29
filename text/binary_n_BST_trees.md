@@ -17,6 +17,12 @@ A tree sort is a sort algorithm that builds a BST from the elements to be sorted
 
 https://en.wikipedia.org/wiki/Tree_sort
 
+## Using trees to create Reverse Polish (postfix)expression
+
+infix -> (3+4)*5 (in-order)
+prefix -> +34
+postfix -> 34+ (post order)
+
 ## Most likely questions
 
 ### The lookup method
@@ -277,7 +283,13 @@ Lever order traversal is sufficient (like binary heap).
 
 ### Full Tree
 A full Binary is a Binary Tree where every node has either 0 or 2 children.
-We can simply store preorder traversal and store a bit with every node to indicate whether the node is an internal node or a leaf node.
+
+It is not possible to construct a general Binary Tree from preorder and postorder traversals (See this).
+But if know that the Binary Tree is Full, we can construct the tree without ambiguity.
+
+http://www.geeksforgeeks.org/full-and-complete-binary-tree-from-given-preorder-and-postorder-traversals/
+
+TODO
 
 ### General Binary Tree
 How to store a general Binary Tree?

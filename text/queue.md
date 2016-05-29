@@ -29,8 +29,12 @@ Remove      remove()        pool()
 Examine     element()       peek()
 
 
+## Most likely questions
 
-assignment 1
+TODO
+
+http://www.geeksforgeeks.org/maximum-of-all-subarrays-of-size-k/
+
 
 A long array A[] is given to you. There is a sliding window of size w which is moving from the very left of the array to the very right. You can only see the w numbers in the window. Each time the sliding window moves rightwards by one position. Following is an example:
 The array is [1 3 -1 -3 5 3 6 7], and w is 3.
