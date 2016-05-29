@@ -1,5 +1,11 @@
 package heap_prioqueue;
 
+/**
+ *                   root at 0    root at 1
+ * Left child        ix*2 + 1     ix*2
+ * Right child       ix*2 + 2     ix*2 + 1
+ * Parent            (ix-1)/2     ix/2
+ */
 public class Heap {
 
     int[] storage;

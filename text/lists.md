@@ -86,6 +86,10 @@ http://www.geeksforgeeks.org/merge-sort-for-doubly-linked-list/
 
 ## Merge two sorted lists using O(1) space
 
+## Merge k sorted lists
+simiar as for arrays (use prioriry queue)
+https://techinterviewsolutions.net/2015/01/09/merge-sort/
+
 ## Find intersection of two sorted lists
 
 TODO
