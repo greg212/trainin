@@ -204,10 +204,18 @@ helper(root.left)
 
 http://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
 
-#### BST
+#### BST deserialization
 
 If the given Binary Tree is Binary Search Tree, we can store it by either storing preorder or postorder traversal.
 In case of Binary Search Trees, only **preorder** or **postorder** traversal is sufficient to store structure information.
+
+#### BST deserialization O(n^2)
+
+create (sub)root
+return it if single element
+search for first greater than root
+recurse left and right
+
 
 ##### O(1) solution
 
@@ -275,3 +283,8 @@ We can simply store preorder traversal and store a bit with every node to indica
 How to store a general Binary Tree?
 A simple solution is to store both Inorder and Preorder traversals. This solution requires requires space twice the size of Binary Tree.
 We can save space by storing Preorder traversal and a marker for NULL pointers.
+
+http://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/
+http://www.programcreek.com/2014/06/leetcode-construct-binary-tree-from-preorder-and-inorder-traversal-java/
+
+TODO
