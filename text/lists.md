@@ -10,7 +10,7 @@ At each iteration we extract the node first from the original linked list and in
 We maintain the invariant that first is the first node of what's left of the original list,
 second is the second node of what's left of the original list, and reverse is the first node of the resulting reversed list.
 
-```java
+```
     public static Node reverse(Node list) {
        if (first == null || first.next == null) return first;
        Node first   = list;
@@ -89,6 +89,12 @@ http://www.geeksforgeeks.org/merge-sort-for-doubly-linked-list/
 ## Find intersection of two sorted lists
 
 TODO
+
+## Write a function to get the intersection point of two Linked Lists.
+
+TODO
+
+http://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/
 
 ## Add two numbers represented by linked lists
 

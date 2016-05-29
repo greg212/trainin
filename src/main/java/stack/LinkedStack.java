@@ -3,16 +3,20 @@ package stack;
 import java.util.NoSuchElementException;
 
 
-class LinkedStack {
-    Node top;
+public class LinkedStack<T> {
+    Node<T> top;
 
-    boolean isEmpty() {
-        return top.getNext() == null;
+    public boolean isEmpty() {
+        return top == null;
     }
 
-    String pop() {
+    public T peek() {
+        return top.getData();
+    }
+
+    public T pop() {
         if (top != null) {
-            String data = top.getData();
+            T data = top.getData();
             top = top.getNext();
             return data;
         }
@@ -20,25 +24,25 @@ class LinkedStack {
         throw new NoSuchElementException();
     }
 
-    void push(String item) {
-        Node newNode = new Node(item, top);
+    public void push(T item) {
+        Node<T> newNode = new Node<>(item, top);
         top = newNode;
     }
 
-    static class Node {
-        String data;
+    static class Node<T> {
+        T data;
         Node next;
 
-        Node(String data, Node next) {
+        Node(T data, Node next) {
             this.data = data;
             this.next = next;
         }
 
-        String getData() {
+        T getData() {
             return data;
         }
 
-        void setData(String data) {
+        void setData(T data) {
             this.data = data;
         }
 
@@ -53,12 +57,12 @@ class LinkedStack {
 
 
     public static void main(String[] args) {
-        LinkedStack stack = new LinkedStack();
+        LinkedStack<Integer> stack = new LinkedStack<>();
 
-            stack.push("I'm pushed first!");
-            stack.push("hahaha");
-            stack.push("mamama");
-            stack.push("top");
+            stack.push(1);
+            stack.push(2);
+            stack.push(3);
+            stack.push(4);
 
             while(!stack.isEmpty()) {
                 System.out.println(stack.pop());
