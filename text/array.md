@@ -1,17 +1,14 @@
-.length
+# Arrays
+
+## Java API
+
+length
 
 int[] b = Arrays.copyOf(a, a.length); //array coping
 
 Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.
 
-
-
-assignment 1)
-
-Write an efficient program for printing k largest elements in an array.
-Elements in array can be in any order.
-
-http://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
+  int i = new Random().nextInt(maxExclusive)
 
 
 assignment 2)
@@ -125,7 +122,14 @@ http://www.geeksforgeeks.org/rearrange-array-in-alternating-positive-negative-it
 # Arrays
 
 ## Merge sort in array
+
+TODO
+
 ## Merge two sorted arrays
+
+TODO
+
+
 ## Merge K sorted arrays
 
 1. Create an output array of size n*k.
@@ -322,17 +326,131 @@ static void MoveZeros(int[] a)
 ~~~
 
     Dutch flag – move all 0s 1s 2s together
-    Shuffle array
-    Intersection of 2 sorted arrays
+##Shuffle array
+
+```
+for i from n - 1 downto 1 do
+       j = random integer with 0 <= j <= i
+       exchange a[j] and a[i]
+```
+
+##Intersection of 2 sorted arrays
+
+```
+
+/* Function prints Intersection of arr1[] and arr2[]
+   m is the number of elements in arr1[]
+   n is the number of elements in arr2[] */
+int printIntersection(int arr1[], int arr2[], int m, int n)
+{
+  int i = 0, j = 0;
+  while (i < m && j < n)
+  {
+    if (arr1[i] < arr2[j])
+      i++;
+    else if (arr2[j] < arr1[i])
+      j++;
+    else /* if arr1[i] == arr2[j] */
+    {
+      printf(" %d ", arr2[j++]);
+      i++;
+    }
+  }
+}
+```
+
+
     Find minimum element in rotated sorted array
     Rotate array left/right
-    count occurrences in an array
+##count occurrences in an array
+
+###sorted array
+
+1) Use Binary search to get index of the first occurrence of x in arr[]. Let the index of the first occurrence be i.
+2) Use Binary search to get index of the last occurrence of x in arr[]. Let the index of the last occurrence be j.
+3) Return (j – i + 1);
+
+###unsorted array
+
+1)  Subtract 1 from every element so that the elements
+    become in range from 0 to n-1
+    for (int j =0; j < n; j++)
+        arr[j] = arr[j]-1;
+
+2)  Use every element arr[i] as index and add 'n' to
+    element present at arr[i]%n to keep track of count of
+    occurrences of arr[i]
+    for (int i=0; i < n; i++)
+        arr[arr[i]%n] = arr[arr[i]%n] + n;
+
+3)  To print counts, simply print the number of times n
+    was added at index corresponding to every element
+    for (int i =0; i < n; i++)
+        print "(i + 1) -> arr[i] "
+
+
     2Sum
     3Sum
-    Median of an array
-    Sliding window maximum in a given array
+##Median of an array
+
+TODO
+
+###Median of two sorted arrays
+
+
+##Sliding window maximum in a given array
+
+Use queue.
+
     Maximum subarray problem
     Max and Min in an array
     Duplicate in an array
     Power of number
 
+
+## optional
+
+###Median of two sorted arrays
+http://www.geeksforgeeks.org/median-of-two-sorted-arrays/
+
+
+###Peak in given array
+www.geeksforgeeks.org/find-a-peak-in-a-given-array/
+
+```
+ // A binary search based function that returns index of a peak
+    // element
+    static int findPeakUtil(int arr[], int low, int high, int n)
+    {
+        // Find index of middle element
+        int mid = low + (high - low)/2;  /* (low + high)/2 */
+
+        // Compare middle element with its neighbours (if neighbours
+        // exist)
+        if ((mid == 0 || arr[mid-1] <= arr[mid]) && (mid == n-1 ||
+             arr[mid+1] <= arr[mid]))
+            return mid;
+
+        // If middle element is not peak and its left neighbor is
+        // greater than it,then left half must have a peak element
+        else if (mid > 0 && arr[mid-1] > arr[mid])
+            return findPeakUtil(arr, low, (mid -1), n);
+
+        // If middle element is not peak and its right neighbor
+        // is greater than it, then right half must have a peak
+        // element
+        else return findPeakUtil(arr, (mid + 1), high, n);
+    }
+
+    // A wrapper over recursive function findPeakUtil()
+    static int findPeak(int arr[], int n)
+    {
+        return findPeakUtil(arr, 0, n-1, n);
+    }
+
+    ```
+
+## other
+Find the missing number in duplicate array  - use XOR
+http://www.geeksforgeeks.org/find-the-element-that-appears-once/
+http://www.davismol.net/2014/03/01/amazon-interview-find-the-only-element-that-appears-an-odd-number-of-times-within-an-array-of-integers/

@@ -6,3 +6,17 @@ Check whether two strings are anagram of each other
 http://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
 http://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
                         http://www.practice.geeksforgeeks.org/problem-page.php?pid=88
+
+
+## Reverse all words
+
+Reverse the whole sentence.
+Reverse every word in sentence.
+
+
+## Rotate left
+
+Invoke Reverse three times:
+- reverse n leading characters
+- reverse second part
+- reverse whole string

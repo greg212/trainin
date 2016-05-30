@@ -45,3 +45,7 @@ Requirement: Find a good optimal way to get B[i]
 
 http://articles.leetcode.com/sliding-window-maximum/
 
+
+- implement queue with two stacks which holds maximum.
+- Use deque
+
