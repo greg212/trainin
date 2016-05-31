@@ -6,9 +6,9 @@ package arrays;
 public class InsertionSort {
 
     public static void main(String[] args) {
-        int[] array = new int[] {5, 1, 12, 5, 8, 9, 34, 5, 7,8};
+        int[] array = new int[] {5, 1, 12, 5, 8, 9, 34, 5, 77,8};
 
-        insertionSort2(array, 0, array.length);
+        insertionCheck(array);
 
         for (int c : array) {
             System.out.print(c + " ");
@@ -38,6 +38,18 @@ public class InsertionSort {
         System.out.println();
     }
 
+//    public static void sort(Comparable[] a) {
+//        int N = a.length;
+//        for (int i = 1; i < N; i++) {
+//            for (int j = i; j > 0; j--) {
+//                if (a[j-1].compareTo(a[j]) > 0) {
+//                    swap(a, j-1, j);
+//                }
+//                else break;
+//            }
+//        }
+//    }
+
     public static void insertionSort2(int[] array, int l, int size) {
 
         //if((size-l)<2) return;
@@ -56,6 +68,20 @@ public class InsertionSort {
             System.out.print(array[i] + " ");
         }
         System.out.println();
+    }
+
+
+    public static void insertionCheck(int[] a) {
+        for(int i=1;i<a.length;i++) {
+            int j=i;
+            int newValue = a[i];
+            while(j>0 && a[j-1] > newValue) {
+                a[j]=a[j-1];
+                j--;
+            }
+
+            a[j]=newValue;
+        }
     }
 
     static void swap(int[] array, int a, int b) {

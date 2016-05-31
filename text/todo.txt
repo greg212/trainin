@@ -8,3 +8,6 @@
 http://www.geeksforgeeks.org/amazon-interview-set-8-2/
 
 
+- implement strstr
+- largest compount workd
+- something with lists

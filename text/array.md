@@ -451,6 +451,29 @@ www.geeksforgeeks.org/find-a-peak-in-a-given-array/
     ```
 
 ## other
+
+### Merge two sorted arrays using O(1) space
+
+```
+Input: ar1[] = {1, 5, 9, 10, 15, 20};
+       ar2[] = {2, 3, 8, 13};
+Output: ar1[] = {1, 2, 3, 5, 8, 9}
+        ar2[] = {10, 13, 15, 20}
+```
+
+http://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/
+
+1) Iterate through every element of ar2[] starting from last
+   element. Do following for every element ar2[i]
+    a) Store last element of ar1[i]: last = ar1[i]
+    b) Loop from last element of ar1[] while element ar1[j] is
+       smaller than ar2[i].
+          ar1[j+1] = ar1[j] // Move element one position ahead
+          j--
+    c) If any element of ar1[] was moved or (j != m-1)
+          ar1[j+1] = ar2[i]
+          ar2[i] = last
+
 Find the missing number in duplicate array  - use XOR
 http://www.geeksforgeeks.org/find-the-element-that-appears-once/
 http://www.davismol.net/2014/03/01/amazon-interview-find-the-only-element-that-appears-an-odd-number-of-times-within-an-array-of-integers/

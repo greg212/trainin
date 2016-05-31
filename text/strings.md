@@ -20,3 +20,15 @@ Invoke Reverse three times:
 - reverse n leading characters
 - reverse second part
 - reverse whole string
+
+
+## Longest common prefix
+
+based on trie
+http://www.geeksforgeeks.org/longest-prefix-matching-a-trie-based-solution-in-java/
+
+http://www.geeksforgeeks.org/longest-prefix-matching-a-trie-based-solution-in-java/
+
+https://en.wikipedia.org/wiki/Suffix_array
+
+http://algs4.cs.princeton.edu/63suffix/
