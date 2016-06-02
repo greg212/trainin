@@ -241,6 +241,14 @@ https://en.wikipedia.org/wiki/Left-child_right-sibling_binary_tree
 
 Populate the nextRight pointers in each node.
 
+Method 1 (Extend Level Order Traversal or BFS)
+Consider the method 2 of Level Order Traversal.
+The method 2 can easily be extended to connect nodes of same level.
+We can augment queue entries to contain level of nodes also which is 0 for root, 1 for root’s children and so on. So a queue node will now contain a pointer to a tree node and an integer level. When we enqueue a node, we make sure that correct level value for node is being set in queue.
+To set nextRight, for every node N, we dequeue the next node from queue, if the level number of next node is same, we set the nextRight of N as address of the dequeued node, otherwise we set nextRight of N as NULL.
+
+Time Complexity: O(n)
+
 You may assume that it is a full binary tree (ie, each node other than the leaves has two children.)
 
 ```
