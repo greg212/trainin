@@ -1,19 +1,18 @@
-# Tree
+# Binary and binary search trees
 
-## Types
+## Tree types
 
 ### Complete binary tree (heap)
 
 It is binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible.
 
-## Full binary tree
-A full binary tree (sometimes proper binary tree or 2-tree) is a tree in which every node other than the leaves has two children. ?
+### Full binary tree
+A full binary tree (sometimes proper binary tree or 2-tree) is a tree in which every node other than the leaves has two children.
 
-## BST: Binary Search Tree
+### BST: Binary Search Tree
 
 A BST is binary tree if, for every tree node n with a key, all keys in the left subtree of n are less than the key of n,
 and all keys in the right subtree of n are greater than the key of n.
-
 
 ## Traversal
 
@@ -21,6 +20,15 @@ and all keys in the right subtree of n are greater than the key of n.
 
 First traverse the left subtree by recursively calling the in-order function. Then display the data part of root element (or current element). THen traverses the right subtree.
 
+### Breadth-first traversal
+
+Level by level, also called level-order.
+
+Use queue.
+start with root, push into queue
+while queue is not empty
+    visit
+    push children
 
 ## Binary tree used for sorting
 
@@ -34,26 +42,8 @@ infix -> (3+4)*5 (in-order)
 prefix -> +34
 postfix -> 34+ (post order)
 
-## Most likely questions
 
-### The lookup method
-
-The average time complexity is O(logN).
-Worst case O(N) - when the whole tree becomes a linked list.
-
-
-### Breadth-first traversal
-
-Level by level, also called level-order.
-
-Use queue.
-start with root, push into queue
-while queue is not empty
-    visit
-    push children
-
-
-### Depth and height of node. Height of tree
+## Depth and height of node. Height of tree
 
 **The depth** of a node is the number of edges from the node to the tree's root node.
 A root node will have a depth of 0.
@@ -81,28 +71,34 @@ Level – The level of a node is defined by 1 + the number of connections betwee
 Level = Depth + 1
 
 ```c
-int getLevel( struct node* h , int n)
-{
-if(!h)
-return 0;
-if(h->data == n)
-return 1;
-int l = getLevel (h->left,n);
-int r= getLevel (h->right,n);
-if (l)
-return l+1;
-else if (r)
-return r+1;
-else return 0;
-
+int getLevel( struct node* h , int n) {
+    if(!h)
+        return 0;
+    if(h->data == n)
+        return 1;
+    int l = getLevel (h->left,n);
+    int r= getLevel (h->right,n);
+    if (l)
+        return l+1;
+    else if (r)
+        return r+1;
+    else return 0;
 }
 ```
+
+## Most likely questions
+
+### The lookup method
+
+The average time complexity is O(logN).
+Worst case O(N) - when the whole tree becomes a linked list.
+
 
 ### Lowest common ancestor(LCA)
 
 http://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
 
-```
+```java
 
 public class BinaryTree
 {
@@ -200,7 +196,7 @@ While traversal, we can keep track of previously visited node.
 If the value of the currently visited node is less than the previous value,
 then tree is not BST.
 
-```
+```java
 public class BinaryTree
 {
     // Root of the Binary Tree
@@ -243,7 +239,7 @@ Populate the nextRight pointers in each node.
 
 You may assume that it is a full binary tree (ie, each node other than the leaves has two children.)
 
-```
+```c
 void connect(Node* p) {
   if (!p) return;
   if (p->leftChild)
@@ -277,7 +273,7 @@ http://www.geeksforgeeks.org/connect-nodes-at-same-level/
 
 This approach works only for Complete Binary Trees. In this method we set nextRight in Pre Order fashion to make sure that the nextRight of parent is set before its children. When we are at node p, we set the nextRight of its left and right children. Since the tree is complete tree, nextRight of p’s left child (p->left->nextRight) will always be p’s right child, and nextRight of p’s right child (p->right->nextRight) will always be left child of p’s nextRight (if p is not the rightmost node at its level). If p is the rightmost node, then nextRight of p’s right child will be NULL.
 
-```
+```java
 class BinaryTree {
 
     static Node root;
@@ -316,6 +312,7 @@ class BinaryTree {
         connectRecur(p.left);
         connectRecur(p.right);
     }
+}
 ```
 
 ### Inorder Successor
@@ -351,8 +348,7 @@ define BST_FIND_PREDECESSOR(Node):
 
  Print All Paths From Root In a Binary Tree Whose Sum is Equal to a Given Number
 
-
-    Cre­ate a global vari­able as String = path.
+    Cre­ate a global variable as String = path.
     Do the pre­order
     if root is greater than Sum required, return.
     If not then, add root to the path and update the required sum (sum=sum-root.data).
@@ -379,7 +375,7 @@ String path;
 ```
 
 ### Given a binary tree, print all root-to-leaf paths
-```
+```java
 class BinaryTree {
 
     static Node root;
@@ -413,6 +409,7 @@ class BinaryTree {
             printPathsRecur(node.right, path, pathLen);
         }
     }
+}
  ```
 
 ###  Binary Search
@@ -439,7 +436,7 @@ define ITERATIVE_BST_TREE_SEARCH (Node, Key):
 
 http://www.geeksforgeeks.org/check-if-two-trees-are-mirror/
 
-```
+```c
 int areMirror(Node* a, Node* b)
 {
     /* Base case : Both empty */
@@ -458,8 +455,6 @@ int areMirror(Node* a, Node* b)
             areMirror(a->right, b->left);
 }
 ```
-
-
 
 ## Number of Distinct Binary trees
 
@@ -513,7 +508,7 @@ public int calculateSum(TreeNode root, int[] max) {
 
 ## Other
 
-## Find min/max value
+### Find min/max value
 
 Follow down to left subtree. Iterative version:
 
@@ -528,12 +523,7 @@ For max - follow down right subtree
 
 ### Kth smallest
 
-We could display all the nodes in order by in-order traversals.
-
-
-private void helper(TreeNode root) {
-if(root != null) {
-helper(root.left)
+We could display all the nodes in order by **in-order** traversals.
 
 ### Serialize / deserialize binary tree
 
@@ -554,7 +544,7 @@ recurse left and right
 
 ##### O(1) solution
 
-```
+```java
 class Node {
     int data;
     Node left, right;
@@ -604,8 +594,9 @@ class BinaryTree {
      }
 
      return root;
- }
- ```
+    }
+}
+```
 
 #### Complete Tree
 Lever order traversal is sufficient (like binary heap).
