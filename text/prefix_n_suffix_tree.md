@@ -1,25 +1,19 @@
-In computer science, a trie, also called digital tree and sometimes radix tree or prefix tree (as they can be searched by prefixes),
-is an ordered tree data structure that is used to store a dynamic set or associative array where the keys are usually strings.
+A trie, also called digital tree and sometimes radix tree or prefix tree (as they can be searched by prefixes),
+is an ordered tree data structure that is used to store a dynamic set or associative array
+where the keys are usually strings.
+
 Unlike a binary search tree, no node in the tree stores the key associated with that node;
 instead, its position in the tree defines the key with which it is associated.
- All the descendants of a node have a common prefix of the string associated with that node,
+
+All the descendants of a node have a common prefix of the string associated with that node,
  and the root is associated with the empty string.
  Values are not necessarily associated with every node.
 
-  Rather, values tend only to be associated with leaves, a
- nd with some inner nodes that correspond to keys of interest.
-
- For the space-optimized presentation of prefix tree, see compact prefix tree.
+Rather, values tend only to be associated with leaves, and with some inner nodes that correspond to keys of interest.
 
 
- Tries
- Smalles tree such that:
- - Each edge is labeled with a character from Sigma
- - A node has at most one outgoing edge labeled with c, for any c in Sigma
- - Each key is "spelled out" along some path starting at the root
-
-
-As discussed below, a trie has a number of advantages over binary search trees.[6] A trie can also be used to replace a hash table, over which it has the following advantages:
+Advantages over binary search trees.
+A trie can also be used to replace a hash table, over which it has the following advantages:
 
     Looking up data in a trie is faster in the worst case, O(m) time (where m is the length of a search string), compared to an imperfect hash table. An imperfect hash table can have key collisions. A key collision is the hash function mapping of different keys to the same position in a hash table. The worst-case lookup speed in an imperfect hash table is O(N) time, but far more typically is O(1), with O(m) time spent evaluating the hash.
     There are no collisions of different keys in a trie.
@@ -42,3 +36,31 @@ Lexicographic sorting of a set of keys can be accomplished with a simple trie-ba
     Output all keys in the trie by means of pre-order traversal, which results in output that is in lexicographically increasing order. Pre-order traversal is a kind of depth-first traversal.
 
 This algorithm is a form of radix sort.
+
+http://www.geeksforgeeks.org/trie-insert-and-search/
+
+Appications
+- autocompletion, spell checkers
+- partial matching basing on prefix
+LONGEST PREFIX MATCHING
+
+
+## Suffix tree
+
+http://www.geeksforgeeks.org/pattern-searching-set-8-suffix-tree-introduction/
+
+###Applications of Suffix Tree (and array)
+1) Pattern Searching
+2) Finding the longest repeated substring
+3) Finding the longest common substring
+4) Finding the longest palindrome in a string
+
+
+## Sufix
+array
+A suffix array is a sorted array of all suffixes of a given string. The definition is similar to Suffix Tree which is compressed trie of all suffixes of the given text. Any suffix tree based algorithm can be replaced with an algorithm that uses a suffix array enhanced with additional information and solves the same problem in the same time complexity (Source Wiki).
+A suffix array can be constructed from Suffix tree by doing a DFS traversal of the suffix tree. In fact Suffix array and suffix tree both can be constructed from each other in linear time.
+Advantages of suffix arrays over suffix trees include improved space requirements, simpler linear time construction algorithms (e.g., compared to Ukkonen’s algorithm) and improved cache locality (Source: Wiki)
+
+http://www.geeksforgeeks.org/suffix-array-set-1-introduction/
+http://www.geeksforgeeks.org/suffix-array-set-2-a-nlognlogn-algorithm/

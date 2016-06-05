@@ -20,7 +20,7 @@ and all keys in the right subtree of n are greater than the key of n.
 
 First traverse the left subtree by recursively calling the in-order function. Then display the data part of root element (or current element). THen traverses the right subtree.
 
-### Breadth-first traversal
+### Breadth-first traversal (BFS)
 
 Level by level, also called level-order.
 
@@ -29,6 +29,24 @@ start with root, push into queue
 while queue is not empty
     visit
     push children
+
+    ```java
+
+    void LevelOrder(Node root)
+        {
+
+    Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()) {
+            Node n = q.remove();
+
+            System.out.print(n.data + " ");
+
+            if(n.left !=null) q.add(n.left);
+            if(n.right != null) q.add(n.right);
+        }
+        }
+    ```
 
 ## Binary tree used for sorting
 
@@ -466,6 +484,9 @@ int areMirror(Node* a, Node* b)
 
 ## Number of Distinct Binary trees
 
+http://www.geeksforgeeks.org/g-fact-18/
+
+
 Let T(n) be the number of bsts of n elements.
 
 Given n distinct ordered elements, numbered 1 to n, we select i as the root.
@@ -532,6 +553,46 @@ For max - follow down right subtree
 ### Kth smallest
 
 We could display all the nodes in order by **in-order** traversals.
+
+
+### Top view http://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
+
+```java
+class Tree {
+static void top_view(Node root)
+{
+
+       // System.out.print(root.data + " ");
+
+        if(root.left !=null) postorder(root);
+        if(root.right != null) preorder(root.right);
+
+}
+
+static void preorder(Node root) {
+    if(root==null) return;
+
+     System.out.print(root.data + " ");
+    preorder(root.right);
+
+}
+
+static void postorder(Node root) {
+    if(root==null) return;
+
+
+    postorder(root.left);
+      System.out.print(root.data + " ");
+
+}}
+```
+
+
+### Vertical order
+
+http://www.geeksforgeeks.org/print-binary-tree-vertical-order-set-2/
+
+### http://www.geeksforgeeks.org/print-binary-tree-vertical-order-set-2/
 
 ### Serialize / deserialize binary tree
 

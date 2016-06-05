@@ -400,7 +400,11 @@ TODO
 
 ##Sliding window maximum in a given array
 
-Use queue.
+http://articles.leetcode.com/sliding-window-maximum/
+
+http://algorithmsandme.in/2014/03/heaps-sliding-window-algorithm/
+
+http://tech-queries.blogspot.com/2011/05/sliding-window-maximum.html
 
     Maximum subarray problem
     Max and Min in an array
