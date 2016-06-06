@@ -24,6 +24,32 @@ second is the second node of what's left of the original list, and reverse is th
        return reverse;
     }
 ```
+```java
+ // A simple and tail recursive function to reverse
+    // a linked list.  prev is passed as NULL initially.
+    Node reverseUtil(Node curr, Node prev) {
+
+        /* If last node mark it head*/
+        if (curr.next == null) {
+            head = curr;
+
+            /* Update next to prev node */
+            curr.next = prev;
+            return null;
+        }
+
+        /* Save curr->next node for recursive call */
+        Node next1 = curr.next;
+
+        /* and update next ..*/
+        curr.next = prev;
+
+        reverseUtil(next1, curr);
+        return head;
+    }
+```
+
+http://www.geeksforgeeks.org/write-a-function-to-reverse-the-nodes-of-a-linked-list/
 
 ## Reverse a Linked List in groups of given size
 *Given a linked list, write a function to reverse every k nodes (where k is an input to the function). *
@@ -79,6 +105,32 @@ http://www.java2blog.com/2016/04/how-to-check-if-linked-list-is.html
 ## Rotate linked list
 
 ## Implement merge sort on lists
+
+Recursive version, uses stack propotional to lenght
+
+struct node* SortedMerge(struct node* a, struct node* b)
+{
+  struct node* result = NULL;
+
+  /* Base cases */
+  if (a == NULL)
+     return(b);
+  else if (b==NULL)
+     return(a);
+
+  /* Pick either a or b, and recur */
+  if (a->data <= b->data)
+  {
+     result = a;
+     result->next = SortedMerge(a->next, b);
+  }
+  else
+  {
+     result = b;
+     result->next = SortedMerge(a, b->next);
+  }
+  return(result);
+}F
 
 ## Merge Sort for Doubly Linked List
 Similar to singly linked (only maintain prev poniter).

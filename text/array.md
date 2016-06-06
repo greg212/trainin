@@ -481,3 +481,18 @@ http://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/
 Find the missing number in duplicate array  - use XOR
 http://www.geeksforgeeks.org/find-the-element-that-appears-once/
 http://www.davismol.net/2014/03/01/amazon-interview-find-the-only-element-that-appears-an-odd-number-of-times-within-an-array-of-integers/
+
+
+## Median in a stream of integers (running integers)
+http://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
+
+
+W can use a max heap on left side to represent elements that are less than effective median, and a min heap on right side to represent elements that are greater than effective median.
+
+After processing an incoming element, the number of elements in heaps differ utmost by 1 element.
+When both heaps contain same number of elements, we pick average of heaps root data as effective median.
+
+When the heaps are not balanced, we select effective median from the root of heap containing more elements.
+
+Every time you insert, compare the new element with those at the top of the heaps in order to decide where to insert it.
+If the new element is greater than the current median, it goes to the min-heap. If it is less than the current median, it goes to the max heap. Then you might need to rebalance. If the sizes of the heaps differ by more than one element, extract the min/max from the heap with more elements and insert it into the other heap.
