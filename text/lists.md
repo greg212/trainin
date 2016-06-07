@@ -24,6 +24,30 @@ second is the second node of what's left of the original list, and reverse is th
        return reverse;
     }
 ```
+
+My solution:
+```java
+Node Reverse(Node head) {
+    Node curr = head != null ? head.next : null;
+    Node output = head;
+    output.next = null;
+
+    while(curr != null) {
+        Node tmp = curr.next;
+
+        curr.next = output;
+        output = curr;
+        curr = tmp;
+    }
+     //[0]->[1]->[2]->[3]->[4]->NULL
+
+//insert front [0]
+     //    insert front [1]
+
+    return output;
+}
+
+```
 ```java
  // A simple and tail recursive function to reverse
     // a linked list.  prev is passed as NULL initially.
@@ -63,12 +87,33 @@ Output:  5->4->3->2->1->8->7->6->NULL.
 
 **Solution**
 
-## Mth-to-Last Element of a Singly Linked List
-
+TODO
 http://www.geeksforgeeks.org/reverse-a-list-in-groups-of-given-size/
 
-TODO
+## Mth-to-Last Element of a Singly Linked List
 
+so we have two pointers. one is a iteration pointer and the other will be behind it by requested number of elements.
+so for example lets say we need to get value of 3rd element from tail. we start incrementing second pointer after 3rd element alongside
+ with iteration pointer.
+When iteration pointer gets to the end(tail) second pointer is going to be pointing to 3rd element from it. which is our answer. hope that helps.
+
+```java
+int GetNode(Node head,int n) {
+
+    Node posNode = head;
+    Node nthFromTail = head;
+    for(int i=0; i<n; i++) {
+        posNode = posNode.next;
+    }
+
+    while(posNode.next != null) {
+        posNode = posNode.next;
+        nthFromTail = nthFromTail.next;
+    }
+
+    return nthFromTail.data;
+}
+```
 **Solution**
 	
 	1) calculate size (n) of list - traverse, storing each node, checking is this end, if not use node's NEXT pointer 
@@ -87,6 +132,21 @@ If the fast pointer moves onto or over the slow pointer
 Return that there is a cycle
 Advance the slow pointer one node
 Advance the fast pointer two nodes
+```java
+boolean hasCycle(Node head) {
+    Node slow = head;
+    Node fast = head;
+    while(fast != null && slow != null) {
+        slow = slow.next;
+        if(fast.next != null) {
+            fast  = fast.next.next;
+        }
+        if(fast == slow) return true;
+    }
+
+    return false;
+}
+```
 
 ## Find start node of loop in linked list
 TODO
@@ -178,3 +238,61 @@ http://www.geeksforgeeks.org/remove-duplicates-from-an-unsorted-linked-list/
 1) two loops (n^2)
 2) merge sort fist, then traverse and remove dups nlogn
 3) use hash table put, remove dups - n (linear assuming hash is O(1))
+
+## Remove duplicates in sorted list
+
+```java
+Node RemoveDuplicates(Node head) {
+    if(head == null) return null;
+
+    Node curr = head;
+
+    while(curr.next != null ) {
+        if(curr.data == curr.next.data) {
+            curr.next = curr.next.next;
+        } else {
+            curr = curr.next;
+        }
+    }
+
+    return head;
+}
+```
+
+## Find merge point of two lists
+
+http://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/
+
+```java
+Node SortedInsert(Node head,int data) {
+
+    if(head != null ) {
+        Node curr = head;
+
+        while(curr.next != null && curr.next.data < data) {
+
+            curr = curr.next;
+        }
+
+        Node newNode = new Node();
+        newNode.data = data;
+
+        newNode.next = curr.next;
+        if(newNode.next!=null) {
+            newNode.next.prev = newNode;
+        }
+        curr.next = newNode;
+
+        return head;
+    } else {
+        Node newNode = new Node();
+        newNode.prev = null;
+        newNode.data = data;
+
+        return newNode;
+    }
+}
+```
+
+## Sort insert for cicular linked list
+http://www.geeksforgeeks.org/sorted-insert-for-circular-linked-list/
