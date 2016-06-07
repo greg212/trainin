@@ -15,3 +15,6 @@ CO było
 - how you would implement cache
 - sort very big numbers 106 (?)
 - add big numbers (char array)
+
+Question 42 Please design a function to add two arbitrary positive integers. (Coding interviews.pdf)
+

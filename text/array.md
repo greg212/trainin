@@ -496,3 +496,16 @@ When the heaps are not balanced, we select effective median from the root of hea
 
 Every time you insert, compare the new element with those at the top of the heaps in order to decide where to insert it.
 If the new element is greater than the current median, it goes to the min-heap. If it is less than the current median, it goes to the max heap. Then you might need to rebalance. If the sizes of the heaps differ by more than one element, extract the min/max from the heap with more elements and insert it into the other heap.
+
+
+Since median is middle of all integers if number for elements are odd, we need to keep size difference of two heaps either equal  0 or  1.
+If size difference increases, we need to adjust elements in two heaps.
+If size of max heap is 2 more than min heap, extract maximum element from max heap and put it in min heap.
+If size of min heap is 2 more than min heap, extract minimum element from max heap and put it in max heap.
+
+
+Question 46 Given an array and a value, how do you implement a function to remove all instances of that
+value in place and return the new length of the array? It is not required that you keep the order of the remaining
+numbers. It doesn't matter what you leave beyond the new length.
+For example, if the input array is {4, 3, 2, 1, 2, 3, 6}, the resulting array after removing value 2 contains the
+numbers {4, 3, 1, 3, 6}, and the new length of the remaining array is 5.

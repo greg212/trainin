@@ -178,3 +178,23 @@ http://www.geeksforgeeks.org/remove-duplicates-from-an-unsorted-linked-list/
 1) two loops (n^2)
 2) merge sort fist, then traverse and remove dups nlogn
 3) use hash table put, remove dups - n (linear assuming hash is O(1))
+
+
+## remove cycle from the linked list
+
+
+## Reverse doubly linked
+```java
+Node Reverse(Node head) {
+  Node curr = head;
+    Node newHead = head;
+    while (curr != null) {
+        Node next = curr.next;
+        curr.next = curr.prev;
+        curr.prev = next;
+        newHead = curr;  //important
+        curr = next;
+    }
+    return newHead;
+}
+```
