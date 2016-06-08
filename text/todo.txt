@@ -2,16 +2,65 @@
 2. zrobic double linked list + operacje
 3. zrobic stos 
 
-
-
-
 http://www.geeksforgeeks.org/amazon-interview-set-8-2/
 
 CO było
-- implement strstr
+- implement strstr (StrStr.java)
+- add big numbers (char array)
 - largest compound word
 - something with lists
 
 - how you would implement cache
 - sort very big numbers 106 (?)
-- add big numbers (char array)
+
+
+
+Moze warto
+- multiply string
+http://bangbingsyb.blogspot.com/2014/11/leetcode-multiply-strings.html
+
+Shortest palindrome
+Longest palindrome
+
+Add binary [leetcode] (binary strings)
+Add digits [leetcode]
+
+//constant time
+class Solution {
+public:
+    int addDigits(int num) {
+        return 1 + (num - 1) % 9;
+    }
+};
+
+
+http://www.geeksforgeeks.org/add-two-numbers-without-using-arithmetic-operators/
+
+
+Sum of two bits can be obtained by performing XOR (^) of the two bits. Carry bit can be obtained by performing AND (&) of two bits.
+
+int Add(int x, int y)
+{
+    // Iterate till there is no carry
+    while (y != 0)
+    {
+        // carry now contains common set bits of x and y
+        int carry = x & y;
+
+        // Sum of bits of x and y where at least one of the bits is not set
+        x = x ^ y;
+
+        // Carry is shifted by one so that adding it to x gives the required sum
+        y = carry << 1;
+    }
+    return x;
+}
+
+
+
+ https://en.wikipedia.org/wiki/Digital_root
+
+
+ http://bangbingsyb.blogspot.com/2014/11/leetcode-multiply-strings.html
+
+

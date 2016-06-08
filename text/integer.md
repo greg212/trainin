@@ -73,3 +73,9 @@ static int maxXor(int l, int r) {
         while(Math.pow(2,a)< xor)a++;
         return (int)Math.pow(2,a) - 1 ;
     }
+
+
+https://en.wikipedia.org/wiki/Digital_root
+dr(n) = 1 ((n-1)mod9)
+
+
