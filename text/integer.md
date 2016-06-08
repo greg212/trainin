@@ -16,10 +16,7 @@ public static char toLowerCase(char ch)
 int ceil = (a - 1) / b + 1;
 int floor = a/b
 
-midele in odd element array = length/2
 how to check if number is odd
-
-
 // num % 2 == 1 return incorrect results on negative 
 public boolean isOddNumer(int num) {
     return (num & 1) != 0;

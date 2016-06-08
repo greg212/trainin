@@ -1,7 +1,0 @@
-median from a stream of numbers (if count i even, the edian is defined as value of the two numbers in the middle)
-
-- array, not sorted - partition method O(1) to add number, and O(n) to get median
-- array, sorted - znamy pozycje n/2 - O(1) lecz dodanie O(n)
-
-
-Majorities in Arrays

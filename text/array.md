@@ -82,15 +82,9 @@ void leftRotate(int arr[], int d, int n)
 
 
 
- array todo
-
- http://www.geeksforgeeks.org/maximum-sum-path-across-two-arrays/
-
 
  https://www.careercup.com/question?id=5638261762424832
 
-
- TODO implement circular buffer
 
 ASSIGNMENT 3
 http://www.geeksforgeeks.org/count-all-distinct-pairs-formed-by-contiguous-sub-array/
@@ -509,3 +503,8 @@ value in place and return the new length of the array? It is not required that y
 numbers. It doesn't matter what you leave beyond the new length.
 For example, if the input array is {4, 3, 2, 1, 2, 3, 6}, the resulting array after removing value 2 contains the
 numbers {4, 3, 1, 3, 6}, and the new length of the remaining array is 5.
+
+median from a stream of numbers (if count i even, the edian is defined as value of the two numbers in the middle)
+
+- array, not sorted - partition method O(1) to add number, and O(n) to get median
+- array, sorted - znamy pozycje n/2 - O(1) lecz dodanie O(n)
