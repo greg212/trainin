@@ -64,3 +64,8 @@ int Add(int x, int y)
  http://bangbingsyb.blogspot.com/2014/11/leetcode-multiply-strings.html
 
 
+
+- add big numbers (char array)
+
+Question 42 Please design a function to add two arbitrary positive integers. (Coding interviews.pdf)
+

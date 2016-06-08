@@ -32,3 +32,6 @@ http://www.geeksforgeeks.org/longest-prefix-matching-a-trie-based-solution-in-ja
 https://en.wikipedia.org/wiki/Suffix_array
 
 http://algs4.cs.princeton.edu/63suffix/
+
+## Next lexicographical permutation
+https://www.nayuki.io/page/next-lexicographical-permutation-algorithm

@@ -296,3 +296,23 @@ Node SortedInsert(Node head,int data) {
 
 ## Sort insert for cicular linked list
 http://www.geeksforgeeks.org/sorted-insert-for-circular-linked-list/
+
+
+## remove cycle from the linked list
+
+
+## Reverse doubly linked
+```java
+Node Reverse(Node head) {
+  Node curr = head;
+    Node newHead = head;
+    while (curr != null) {
+        Node next = curr.next;
+        curr.next = curr.prev;
+        curr.prev = next;
+        newHead = curr;  //important
+        curr = next;
+    }
+    return newHead;
+}
+```
