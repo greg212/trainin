@@ -10,7 +10,7 @@ public class MaximumSubarray {
         int[] a = {1, -4, 6, 1, -3, 6};
 
 
-        int max = getMaxSubarrayNaive(a);
+        int max = getMaxSubarray(a);
 
         System.out.println();
         System.out.println("max:" + max);
@@ -22,7 +22,7 @@ public class MaximumSubarray {
         for (int start = 0; start < a.length; start++) {
             int currSum = 0;
             for (int size = 1; size < a.length; size++) {
-                if ((start + size) > a.length) break;
+                if ((start + size) >= a.length) break;
                 currSum += a[start+size];
 //FIXME
                 max = Math.max(currSum, max);
