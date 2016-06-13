@@ -25,7 +25,7 @@ e.g. {1, 2, 3, 4, 5}, d=2
 http://www.geeksforgeeks.org/array-rotation/
 
 
-
+```c
 ////A Juggling Algorithm
 /*Fuction to get gcd of a and b*/
 int gcd(int a,int b)
@@ -58,11 +58,11 @@ void leftRotate(int arr[], int d, int n)
     arr[j] = temp;
   }
 }
-
+```
 ////~A Juggling Algorithm
 
 or O(n d)
-
+```
 void leftRotatebyOne(int arr[], int n)
 {
   int i, temp;
@@ -79,6 +79,8 @@ void leftRotate(int arr[], int d, int n)
   for (i = 0; i < d; i++)
     leftRotatebyOne(arr, n);
 }
+
+```
 
 
 
