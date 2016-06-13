@@ -1,12 +1,14 @@
-package strings;
+package strings.suffix;
 
 import java.util.Arrays;
 
 /**
+ * http://algs4.cs.princeton.edu/63suffix/LongestRepeatedSubstring.java.html
+ * 
  * Created by gs on 2016-05-31.
  */
 
-public class LongestCommonPrefix {
+public class LongestRepeatingSubstring {
 
     // return the longest common prefix of s and t
     public static String lcp(String s, String t) {

@@ -27,11 +27,12 @@ Invoke Reverse three times:
 based on trie
 http://www.geeksforgeeks.org/longest-prefix-matching-a-trie-based-solution-in-java/
 
-http://www.geeksforgeeks.org/longest-prefix-matching-a-trie-based-solution-in-java/
-
 https://en.wikipedia.org/wiki/Suffix_array
 
 http://algs4.cs.princeton.edu/63suffix/
 
 ## Next lexicographical permutation
 https://www.nayuki.io/page/next-lexicographical-permutation-algorithm
+
+
+proper sufix/prefix - not equal to the string itself (sometimes also not empty)

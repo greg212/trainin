@@ -47,11 +47,32 @@ LONGEST PREFIX MATCHING
 
 ## Suffix tree
 
+
+
+## Suffix array
+A suffix array is a sorted array of all suffixes of a given string.
+The definition is similar to Suffix Tree which is compressed trie of all suffixes of the given text.
+Any suffix tree based algorithm can be replaced with an algorithm that uses a suffix array enhanced with additional information and solves the same problem in the same time complexity (Source Wiki).
+A suffix array can be constructed from Suffix tree by doing a DFS traversal of the suffix tree.
+In fact Suffix array and suffix tree both can be constructed from each other in linear time.
+Advantages of suffix arrays over suffix trees include improved space requirements, simpler linear time construction algorithms (e.g., compared to Ukkonen’s algorithm) and improved cache locality (Source: Wiki)
+
+http://www.geeksforgeeks.org/suffix-array-set-1-introduction/
+
+
 http://www.geeksforgeeks.org/pattern-searching-set-8-suffix-tree-introduction/
 
 ###Applications of Suffix Tree (and array)
 1) Pattern Searching
-2) Finding the longest repeated substring
+### Finding the longest repeated substring
+
+This problem can be solved in linear time and space [ Θ(n) ] by building a suffix tree for the string,
+and finding the deepest internal node in the tree.
+Depth is measured by the number of characters traversed from the root.
+The string spelled by the edges from the root to such a node is a longest repeated substring.
+The problem of finding the longest substring with at least k {\displaystyle k} occurrences can be
+solved by first preprocessing the tree to count the number of leaf descendants for each internal node,
+and then finding the deepest node with at least k {\displaystyle k} leaf descendants that have no children.
 3) Finding the longest common substring
 4) Finding the longest palindrome in a string
 

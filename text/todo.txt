@@ -69,3 +69,6 @@ int Add(int x, int y)
 
 Question 42 Please design a function to add two arbitrary positive integers. (Coding interviews.pdf)
 
+
+https://itsrough.wordpress.com/2012/10/20/must-read-problems-of-leetcode/
+http://www.ardendertat.com/2012/06/15/programming-interview-questions-28-longest-compound-word/
