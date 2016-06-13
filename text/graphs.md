@@ -53,7 +53,15 @@ such that for every directed edge uv vertex u comes before v in the ordering.
 
 Topological sorting is possible only for DAG.
 
-Depth-first search based algorithm loops through each node of the graph, in an arbitrary order, initiating a depth-first search that terminates when it hits any node that has already been visited since the beginning of the topological sort or the node has no outgoing edges (i.e. a leaf node):
+Depth-first search based algorithm loops through each node of the graph, in an arbitrary order,
+initiating a depth-first search that terminates when it hits any node that has already been visited since
+the beginning of the topological sort or the node has no outgoing edges (i.e. a leaf node):
+
+- run depth-first search
+- return vertices in reverse postorder
+
+https://www.youtube.com/watch?v=jksMzq4LgfM
+
 ```
 L ← Empty list that will contain the sorted nodes
 while there are unmarked nodes do
