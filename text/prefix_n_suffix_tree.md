@@ -33,7 +33,8 @@ Sorting
 Lexicographic sorting of a set of keys can be accomplished with a simple trie-based algorithm as follows:
 
     Insert all keys in a trie.
-    Output all keys in the trie by means of pre-order traversal, which results in output that is in lexicographically increasing order. Pre-order traversal is a kind of depth-first traversal.
+    Output all keys in the trie by means of pre-order traversal, which results in output that is in lexicographically increasing order.
+    Pre-order traversal is a kind of depth-first traversal.
 
 This algorithm is a form of radix sort.
 
