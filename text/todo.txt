@@ -72,3 +72,8 @@ Question 42 Please design a function to add two arbitrary positive integers. (Co
 
 https://itsrough.wordpress.com/2012/10/20/must-read-problems-of-leetcode/
 http://www.ardendertat.com/2012/06/15/programming-interview-questions-28-longest-compound-word/
+
+https://itsrough.wordpress.com/2012/10/20/must-read-problems-of-leetcode/
+http://ideone.com/c0io1K
+
+http://www.geeksforgeeks.org/dynamic-programming-set-5-edit-distance/

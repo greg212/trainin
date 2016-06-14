@@ -22,10 +22,18 @@ public class LongestCommonSubsequence {
             }
         }
 
+        for(int i=0;i<=a.length(); i++) {
+            for(int j=0;j<=b.length();j++ ) {
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println();
+        }
+
         return dp[m][n];
     }
 
     public static void main(String[] args) {
-        System.out.println(getLongestCommonSubsequence("banana", "ba"));
+        System.out.println(getLongestCommonSubsequence("ana", "banana"));
+
     }
 }
