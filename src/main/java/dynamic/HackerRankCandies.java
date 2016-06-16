@@ -13,15 +13,18 @@ public class HackerRankCandies {
         a[0] = 1;
 
         for(int i=1; i < rank.length; i++ ) {
-            a[i] = 1;
+            //a[i] = 1;
            if(rank[i] > rank[i-1]) {
-               a[i] += a[i - 1];
+               a[i] = a[i - 1] +1 ;
+           } else
+           {
+               a[i] = 1;
            }
         }
 
-        for(int i=rank.length-1; i>0; i--) {
-            if(rank[i-1]>= rank[i]) {
-                a[i-1] = java.lang.Math.max(a[i-1], a[i]+1);
+        for(int i=rank.length-2; i>=0; i--) {
+            if(rank[i]> rank[i+1]) {
+                a[i] = java.lang.Math.max(a[i], a[i+1]+1);
             }
         }
 
