@@ -7,7 +7,7 @@ import java.util.Arrays;
  * http://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/
  * Created by gs on 2016-05-26.
  */
-public class MergeTwoSortedContantSpace {
+public class MergeTwoSortedConstantSpace {
 
 //    http://algs4.cs.princeton.edu/22mergesort/
 
