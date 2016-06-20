@@ -4,7 +4,10 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 /**
+ *
+ * http://algs4.cs.princeton.edu/44sp/
  * Created by gs on 2016-06-19.
+ *
  */
 public class dijkstraShortestReach {
 
