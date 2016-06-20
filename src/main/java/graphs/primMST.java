@@ -1,9 +1,6 @@
 package graphs;
 
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -38,7 +35,9 @@ public class primMST {
                 int a = in.nextInt() - 1;
                 int b = in.nextInt() - 1;
                 int w = in.nextInt();
+                System.out.println("edge "+a + " " + b + " " + w);
                 graph.addEdge(a, b, w);
+                graph.addEdge(b, a, w);
             }
 
             int start = in.nextInt()-1;
@@ -96,7 +95,6 @@ public class primMST {
                     } else if(p1.key > p2.key){
                         return 1;
                     }
-
                     return 0;
                 }
             });
@@ -108,6 +106,7 @@ public class primMST {
                     key[i] = Integer.MAX_VALUE;
                 }
                 prev[i] = -1;
+                System.out.println("add "+i + " " + key[i]);
                 q.add(new GraphPair(i, key[i])); // add all verts
             }
 
@@ -116,7 +115,11 @@ public class primMST {
             while (!q.isEmpty()) {
                 GraphPair pair = q.remove();
 
-                inMST[pair.from] = true;
+                if(!inMST[pair.from]) {
+
+                    System.out.println("MST: " + pair.from + "->"+ prev[pair.from]);
+                    inMST[pair.from] = true;
+                }
 
                 for (GraphEdge edge : adj[pair.from]) {
                     if (inMST[edge.to] == false) {
@@ -125,7 +128,8 @@ public class primMST {
                             prev[edge.to] = pair.from;
 
                             q.add(new GraphPair(edge.to, key[edge.to]));
-                            sum += edge.w;
+
+                            System.out.println(Arrays.toString(prev));
                         }
                     }
                 }
