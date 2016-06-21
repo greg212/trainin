@@ -98,3 +98,70 @@ function visit(node n)
         unmark n temporarily
         add n to head of L
 ```
+
+## Dijkstra shortest path
+
+### Basic
+
+```
+function Dijkstra(Graph, source):
+2      dist[source] ← 0                                    // Initialization
+3
+4      create vertex set Q
+5
+6      for each vertex v in Graph:
+7          if v ≠ source
+8              dist[v] ← INFINITY                          // Unknown distance from source to v
+9              prev[v] ← UNDEFINED                         // Predecessor of v
+10
+11         Q.add_with_priority(v, dist[v])
+12
+13
+14     while Q is not empty:                              // The main loop
+15         u ← Q.extract_min()                            // Remove and return best vertex
+16         for each neighbor v of u:                       // only v that is still in Q
+17             alt = dist[u] + length(u, v)
+18             if alt < dist[v]
+19                 dist[v] ← alt
+20                 prev[v] ← u
+21                 Q.decrease_priority(v, alt)
+22
+23     return dist[], prev[]
+```
+
+### Using a priority queue
+
+```
+function Dijkstra(Graph, source):
+2      dist[source] ← 0                                    // Initialization
+3
+4      create vertex set Q
+5
+6      for each vertex v in Graph:
+7          if v ≠ source
+8              dist[v] ← INFINITY                          // Unknown distance from source to v
+9              prev[v] ← UNDEFINED                         // Predecessor of v
+10
+11         Q.add_with_priority(v, dist[v])
+12
+13
+14     while Q is not empty:                              // The main loop
+15         u ← Q.extract_min()                            // Remove and return best vertex
+16         for each neighbor v of u:                       // only v that is still in Q
+17             alt = dist[u] + length(u, v)
+18             if alt < dist[v]
+19                 dist[v] ← alt
+20                 prev[v] ← u
+21                 Q.decrease_priority(v, alt)
+22
+23     return dist[], prev[]
+```
+
+## Prim MSP
+
+1) Create a set mstSet that keeps track of vertices already included in MST.
+2) Assign a key value to all vertices in the input graph. Initialize all key values as INFINITE. Assign key value as 0 for the first vertex so that it is picked first.
+3) While mstSet doesn’t include all vertices
+….a) Pick a vertex u which is not there in mstSet and has minimum key value.
+….b) Include u to mstSet.
+….c) Update key value of all adjacent vertices of u. To update the key values, iterate through all adjacent vertices. For every adjacent vertex v, if weight of edge u-v is less than the previous key value of v, update the key value as weight of u-v
