@@ -78,3 +78,20 @@ dr(n) = 1 ((n-1)mod9)
 
 - Number of bits set
 y = x & !(x-1)
+
+
+## Drop LSB
+x &= (x-1);
+
+## Check parity
+```java
+int parity(int x) {
+ int result = 0;
+ while(x) {
+    result ^= 1;
+    x &= (x-1);
+    return result;
+}```
+
+
+https://graphics.stanford.edu/~seander/bithacks.html
