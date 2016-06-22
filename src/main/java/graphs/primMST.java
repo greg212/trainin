@@ -1,11 +1,10 @@
 package graphs;
 
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
 
 /**
+ *
+ * http://algs4.cs.princeton.edu/43mst/LazyPrimMST.java.html
  *
  * UNIDIRECTED
  *
@@ -38,7 +37,9 @@ public class primMST {
                 int a = in.nextInt() - 1;
                 int b = in.nextInt() - 1;
                 int w = in.nextInt();
+                System.out.println("edge "+a + " " + b + " " + w);
                 graph.addEdge(a, b, w);
+                graph.addEdge(b, a, w);
             }
 
             int start = in.nextInt()-1;
@@ -49,14 +50,6 @@ public class primMST {
     }
 
 
-    static class GraphPair {
-        int from;
-        int key;
-        GraphPair(int from, int key) {
-            this.from = from;
-            this.key = key;
-        }
-    }
 
     static class GraphEdge {
         int from;
@@ -84,54 +77,45 @@ public class primMST {
         }
 
         void primMST(int vStart) {
-            int[] key = new int[adj.length]; //cokolwiek to znaczy ale tak nazywaja
-            int[] prev = new int[adj.length];
             boolean[] inMST = new boolean[adj.length];
 
-            PriorityQueue<GraphPair> q = new PriorityQueue<>(new Comparator<GraphPair>() {
+            PriorityQueue<GraphEdge> q = new PriorityQueue<>(new Comparator<GraphEdge>() {
                 @Override
-                public int compare(GraphPair p1, GraphPair p2) {
-                    if(p1.key < p2.key) {
+                public int compare(GraphEdge p1, GraphEdge p2) {
+                    if(p1.w < p2.w) {
                         return -1;
-                    } else if(p1.key > p2.key){
+                    } else if(p1.w > p2.w){
                         return 1;
                     }
-
                     return 0;
                 }
             });
 
-            key[vStart] = 0;
-            for (int i = 0; i < adj.length; i++) {
-                inMST[i] = false;
-                if (i != vStart) {
-                    key[i] = Integer.MAX_VALUE;
-                }
-                prev[i] = -1;
-                q.add(new GraphPair(i, key[i])); // add all verts
-            }
-
             int sum = 0;
 
+            scan(0, inMST, q);
+
             while (!q.isEmpty()) {
-                GraphPair pair = q.remove();
+                GraphEdge pair = q.remove();
 
-                inMST[pair.from] = true;
-
-                for (GraphEdge edge : adj[pair.from]) {
-                    if (inMST[edge.to] == false) {
-                        if (edge.w < key[edge.to]) {
-                            key[edge.to] = edge.w;
-                            prev[edge.to] = pair.from;
-
-                            q.add(new GraphPair(edge.to, key[edge.to]));
-                            sum += edge.w;
-                        }
-                    }
+                if(inMST[pair.from] && inMST[pair.to]) {
+                    continue;
                 }
+                sum += pair.w;
+                if(!inMST[pair.from]) scan(pair.from, inMST, q);
+                if(!inMST[pair.to]) scan(pair.to, inMST, q );
             }
 
             System.out.print(sum);
+        }
+
+        private void scan(int v, boolean[] inMST, PriorityQueue<GraphEdge> pq) {
+            inMST[v] = true;
+            for(GraphEdge e : adj[v]) {
+                if(!inMST[e.to]) {
+                    pq.add(e);
+                }
+            }
         }
     }
 }
