@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
+ *
+ * http://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array-set-2-expected-linear-time/
  * Created by gs on 2016-05-30.
  */
 public class QuickSelect {
@@ -51,7 +53,7 @@ public class QuickSelect {
 //        qsort(a);
 //        System.out.println(Arrays.toString(a));
 
-        System.out.println( quickSelectKth(a, 0, a.length-1, 2) );
+        System.out.println( quickSelectKth(a, 0, a.length-1, 4) ); //FIXME does not work
     }
 
     private static int quickSelectKth(int[] a, int l, int r, int kth) {
@@ -65,9 +67,9 @@ public class QuickSelect {
 
             if(pivot-l > kth) {
                 return  quickSelectKth(a, l, pivot-1, kth);
-            } //else {
+            }
                 return quickSelectKth(a, pivot+1, r, kth-pivot+l-1); //(kth - len(A) - Len(A2))
-           // }
+
         }
         return Integer.MIN_VALUE;
     }
