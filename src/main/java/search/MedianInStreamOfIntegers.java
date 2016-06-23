@@ -26,7 +26,10 @@ public class MedianInStreamOfIntegers {
         void sink(int number) {
             if(min.size() > max.size()) {
 
-                if(min.peek() > number) {
+                // there is more on min side
+                if(min.peek() < number) {
+                    // new number is greater
+                    // move to max
                     max.add(min.poll());
                     min.add(number);
                 } else {
@@ -35,20 +38,20 @@ public class MedianInStreamOfIntegers {
             } else if(min.size() < max.size()){
 
                 if(max.peek() < number) {
-                    min.add(max.poll());
-                    max.add(number);
-                } else
-                {
                     min.add(number);
                 }
+                else {
+                    min.add(max.poll());
+                    max.add(number);
+                }
             } else {
-                if(min.isEmpty()) {
+                if(max.isEmpty()) {
                     max.add(number);
                 } else {
-                    if(max.peek() < number) {
-                        min.add(number);
-                    } else {
+                    if(number < min.peek()) {
                         max.add(number);
+                    } else {
+                        min.add(number);
                     }
                 }
             }
@@ -84,7 +87,8 @@ public class MedianInStreamOfIntegers {
         int n = in.nextInt();
         MedianSink calc = new MedianSink();
         while(n-->0) {
-            calc.sink(in.nextInt());
+            int num = in.nextInt();
+            calc.sink(num);
             System.out.println(calc.getMedian());
         }
         in.close();

@@ -1,10 +1,11 @@
 package tree;
 
 import stack.LinkedStack;
-import sun.reflect.generics.tree.Tree;
 
 /**
- * BST can be constructed from PRE-ORDER (and POST ORDER)
+ * BST can be constructed from PRE-ORDER (or POST ORDER)
+ * <p>
+ * http://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/
  * <p>
  * Created by gs on 2016-05-29.
  */
@@ -13,21 +14,13 @@ public class BSTConstruct {
     public static TreeNode insert(TreeNode root, int value) {
         if (root == null) {
             root = new TreeNode(value);
-        } else {
-            if (root.value < value) {
+            return root;
+        }
 
-                if (root.left != null) {
-                    insert(root.left, value);
-                } else {
-                    root.left = new TreeNode(value);
-                }
-            } else {
-                if (root.right != null) {
-                    insert(root.right, value);
-                } else {
-                    root.right = new TreeNode(value);
-                }
-            }
+        if (value < root.value) {
+            root.left = insert(root.left, value);
+        } else {
+            root.right = insert(root.right, value);
         }
         return root;
     }
@@ -52,7 +45,7 @@ public class BSTConstruct {
         printInorder(node.right);
     }
 
-    private static TreeNode constructTree(int[] pre) {
+    private static TreeNode constructBstTree(int[] pre) {
         TreeNode root = new TreeNode(pre[0]);
         LinkedStack<TreeNode> stack = new LinkedStack<>();
 

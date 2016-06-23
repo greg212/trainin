@@ -77,3 +77,10 @@ https://itsrough.wordpress.com/2012/10/20/must-read-problems-of-leetcode/
 http://ideone.com/c0io1K (pattern matching using dynamic programming)
 
 http://www.geeksforgeeks.org/dynamic-programming-set-5-edit-distance/
+
+
+http://www.developer.com/mgmt/three-types-of-interview-questions-software-developers-should-expect.html
+http://katemats.com/interview-questions/ <- ciekawe
+
+how would you design update service
+external sort
