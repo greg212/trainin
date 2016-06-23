@@ -84,3 +84,5 @@ http://katemats.com/interview-questions/ <- ciekawe
 
 how would you design update service
 external sort
+
+http://www.geeksforgeeks.org/maximum-difference-between-two-elements/
