@@ -34,6 +34,26 @@ public class BSTConstruct {
         int size = pre.length;
         TreeNode root = BSTConstruct.constructSlow(pre);
         printInorder(root);
+
+        TreeNode n = findNode(root, 10);
+        TreeNode succ = inOrderSuccessor(root, n);
+
+        if(succ != null) {
+            System.out.println("Inorder succ: " + succ.value);
+        }
+    }
+
+    private static TreeNode findNode(TreeNode root, int i) {
+        if(i < root.value ) {
+            return findNode(root.left, i);
+        } else if(i > root.value) {
+            return findNode(root.right, i);
+        } else if (i == root.value){
+            return root;
+        } else {
+            return null;
+        }
+
     }
 
     static void printInorder(TreeNode node) {
@@ -99,6 +119,58 @@ public class BSTConstruct {
 
         return -1;
     }
+
+
+    static TreeNode inOrderSuccessor(TreeNode root, TreeNode node) {
+
+        if (node.right != null) {
+            return leftMost(node.right);
+        }
+
+        TreeNode q = root;
+        TreeNode succ = null;
+        while (q != null) {
+            if (node.value < q.value) {
+                succ = q;
+                q = q.left;
+            } else if (node.value > q.value) {
+                q = q.right;
+            } else {
+                break;
+            }
+        }
+        return succ;
+    }
+
+    private static TreeNode leftMost(TreeNode node) {
+        //return leftMost(node.left);
+
+        TreeNode p = node;
+
+        while (p.left != null) {
+            p = p.left;
+        }
+
+        return p;
+    }
+
+    //TODO http://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
+
+    //  http://www.geeksforgeeks.org/in-place-conversion-of-sorted-dll-to-balanced-bst/
+
+//    static TreeNode convertToDLLinPlace(TreeNode node) {
+//
+//        if(node == null) {
+//            return null;
+//        }
+//
+//        if(node.left != null) {
+//            TreeNode leftDDL = convertToDLLinPlace(node.left);
+//
+//            inorder predecessor
+//            for(; left.right !=null)
+//        }
+//    }
 
 
 }

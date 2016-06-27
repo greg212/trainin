@@ -39,7 +39,7 @@ public class LongestRepeatingSubstring {
         for (int i = 0; i < N - 1; i++) {
             String x = lcp(suffixes[i], suffixes[i+1]);
 
-            System.out.println(suffixes[i] + "-" + suffixes[i+1] + "-" + x);
+            //System.out.println(suffixes[i] + "-" + suffixes[i+1] + "-" + x);
             if (x.length() > lrs.length())
                 lrs = x;
         }

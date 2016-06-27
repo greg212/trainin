@@ -6,7 +6,7 @@ import java.util.Scanner;
  * https://www.hackerrank.com/challenges/quicksort1
  * Created by U200320 on 2016-06-22.
  */
-public class QSort {
+public class Qsort {
 
     public static void main(String[] args) {
         Scanner in = new Scanner("6\n" +

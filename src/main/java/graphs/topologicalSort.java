@@ -3,6 +3,9 @@ package graphs;
 import java.util.*;
 
 /**
+ *
+ * Topological sort DFS based
+ *
  * http://www.geeksforgeeks.org/topological-sorting/
  * <p>
  * <p>
@@ -84,6 +87,7 @@ public class topologicalSort {
                 }
             }
 
+            //vertex is pushed to stack only when all of its adjacent vertices (and their adjacent vertices and so on)
             stack.push(i);
         }
 

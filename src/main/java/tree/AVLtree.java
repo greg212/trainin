@@ -1,7 +1,5 @@
 package tree;
 
-import static tree.BSTConstruct.findFirstGreater;
-import static tree.BSTConstruct.printInorder;
 
 /**
  * Created by gs on 2016-06-23.

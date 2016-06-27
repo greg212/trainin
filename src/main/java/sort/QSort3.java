@@ -1,9 +1,10 @@
 package sort;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * https://www.hackerrank.com/challenges/quicksort1
+ * https://www.hackerrank.com/challenges/quicksort3
  * Created by U200320 on 2016-06-22.
  */
 public class QSort3 {
@@ -23,7 +24,7 @@ public class QSort3 {
 
         qsort(a, 0, a.length-1);
 
-       // System.out.println(Arrays.toString(a));
+        //System.out.println(Arrays.toString(a));
 
         in.close();
     }
@@ -45,39 +46,34 @@ public class QSort3 {
 
         int pi = partition(a, l, r);
 
+        printSub(a, 0, a.length-1);
+
         qsort(a, l, pi-1);
 
         qsort(a, pi+1, r);
-        printSub(a, l, r);
+
+    }
+
+    static void swap(int[] a, int x, int y) {
+        int tmp = a[x];
+        a[x] = a[y];
+        a[y] = tmp;
     }
 
     private static int partition(int[] a,int l, int r) {
-//todo
-        int pivot = a[l];
-        int[] lower = new int[a.length];
-        int[] higher = new int[a.length];
+        int pivot = a[r];
+        int k=l; //first larger than pivot
+        for(int i=l; i<r;) {
+            if(a[i] < pivot) {
 
-        int k=0;
-        int j=0;
-        for(int i=l+1; i<=r; i++) {
-            if(a[i]<pivot) {
-                lower[k++] = a[i];
+                swap(a, i++, k++);
             } else {
-                higher[j++] = a[i];
+                i++;
             }
         }
 
-        int ii = l;
-        for(int i=0; i<k; i++) {
-            a[ii++] = lower[i];
-        }
-        int pi = ii;
-        a[ii++] = pivot;
+        swap(a, k, r);
 
-        for(int i=0; i<j; i++) {
-            a[ii++] = higher[i];
-        }
-
-        return pi;
+        return k;
     }
 }
